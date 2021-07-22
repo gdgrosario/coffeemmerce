@@ -11,6 +11,16 @@ const routes = [
         name: "About",
         component: () => import("../pages/About.vue"),
     },
+    {
+        path: "/car",
+        name: "Car",
+        component: () => import("../pages/Car.vue"),
+    },
+    {
+        path: "/checkout",
+        name: "Checkout",
+        component: () => import("../pages/Checkout.vue"),
+    },
 ];
 
 const router = new createRouter({

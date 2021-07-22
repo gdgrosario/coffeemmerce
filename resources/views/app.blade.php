@@ -8,7 +8,10 @@
         <title>Laravel</title>
     </head>
     <body class="antialiased">
-        <main id="app"></main>
+        <!-- <main id="app"></main> -->
+        <p id="app">
+            <!-- <Car/> -->
+        </p>
         <script src="{{ mix('js/app.js') }}"></script>
     </body>
 </html>
