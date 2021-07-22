@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.wrapper {
+    @apply 2xl:px-64 xl:px-40 md:px-16 sm:px-12 xm:px-7;
+}
+
+.btn {
+    @apply inline-block px-5 py-2 text-sm font-medium mr-2 mb-2;
+}
+
+.btn-black {
+    @apply bg-gray-200 text-gray-800 hover:text-gray-900;
+}

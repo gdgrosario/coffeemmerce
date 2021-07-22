@@ -1,19 +1,10 @@
 import { createStore } from "vuex";
+import count from "./modules/count";
 
 const store = new createStore({
-    state: {
-        count: 0,
-    },
-    mutations: {
-        increment(state, payload) {
-            state.count += payload;
-        },
-    },
-    actions: {
-        increment({ commit }) {
-            commit("increment", 1);
-        },
-    },
+  modules: {
+    count,
+  },
 });
 
 export default store;
