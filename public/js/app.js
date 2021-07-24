@@ -16361,7 +16361,14 @@ var routes = [{
   path: "/profile",
   name: "Profile",
   component: function component() {
-    return __webpack_require__.e(/*! import() | detail */ "detail").then(__webpack_require__.bind(__webpack_require__, /*! ../pages/Profile/Profile.vue */ "./resources/js/pages/Profile/Profile.vue"));
+    return __webpack_require__.e(/*! import() | detail */ "detail").then(__webpack_require__.bind(__webpack_require__, /*! ../pages/Profile/views/Profile.vue */ "./resources/js/pages/Profile/views/Profile.vue"));
+  }
+}, {
+  path: "/profile/edit",
+  name: "Edit",
+  props: true,
+  component: function component() {
+    return __webpack_require__.e(/*! import() | detail */ "detail").then(__webpack_require__.bind(__webpack_require__, /*! ../pages/Profile/views/Edit.vue */ "./resources/js/pages/Profile/views/Edit.vue"));
   }
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__.createRouter({
@@ -16389,13 +16396,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
 /* harmony import */ var _modules_count__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/count */ "./resources/js/store/modules/count.js");
+/* harmony import */ var _modules_profile__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/profile */ "./resources/js/store/modules/profile.js");
 
 
-var store = new vuex__WEBPACK_IMPORTED_MODULE_1__.createStore({
+
+var store = new vuex__WEBPACK_IMPORTED_MODULE_2__.createStore({
   modules: {
-    count: _modules_count__WEBPACK_IMPORTED_MODULE_0__.default
+    count: _modules_count__WEBPACK_IMPORTED_MODULE_0__.default,
+    profile: _modules_profile__WEBPACK_IMPORTED_MODULE_1__.default
   }
 });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (store);
@@ -16432,6 +16442,32 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/store/modules/profile.js":
+/*!***********************************************!*\
+  !*** ./resources/js/store/modules/profile.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  state: {
+    user: {
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4vHwf_WqQW7lAjOAsNDwrzeJer1Bg863H1Q&usqp=CAU",
+      name: "Alex",
+      bio: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto rerum nisi est sed in et laboriosam nesciunt distinctio architecto? Aut eos quidem adipisci voluptatum dolore corrupti quibusdam rerum in nostrum.",
+      phone: "3254628192",
+      email: "email@gmail.com",
+      password: "12345678"
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/App.vue?vue&type=style&index=0&id=f348271a&lang=css":
 /*!***********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/App.vue?vue&type=style&index=0&id=f348271a&lang=css ***!
@@ -16450,7 +16486,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nhtml {\n  font-family: \"Poppins\", sans-serif;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nhtml {\n  font-family: \"Poppins\", sans-serif;\n}\nbody {\n  background-color: #f5f5f5;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

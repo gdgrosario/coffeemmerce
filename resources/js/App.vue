@@ -8,4 +8,7 @@
 html {
   font-family: "Poppins", sans-serif;
 }
+body {
+  background-color: #f5f5f5;
+}
 </style>

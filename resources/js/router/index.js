@@ -14,7 +14,16 @@ const routes = [
     name: "Profile",
     component: () =>
       import(
-        /* webpackChunkName: "detail", webpackPreload: true */ "../pages/Profile/Profile.vue"
+        /* webpackChunkName: "detail", webpackPreload: true */ "../pages/Profile/views/Profile.vue"
+      ),
+  },
+  {
+    path: "/profile/edit",
+    name: "Edit",
+    props: true,
+    component: () =>
+      import(
+        /* webpackChunkName: "detail", webpackPreload: true */ "../pages/Profile/views/Edit.vue"
       ),
   },
 ];

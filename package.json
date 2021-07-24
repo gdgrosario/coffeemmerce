@@ -10,6 +10,7 @@
         "production": "mix --production"
     },
     "devDependencies": {
+        "@heroicons/vue": "^1.0.2",
         "@vue/compiler-sfc": "^3.1.5",
         "autoprefixer": "^10.3.1",
         "axios": "^0.21",
