@@ -11,6 +11,18 @@ const mix = require("laravel-mix");
  |
  */
 
+mix.disableSuccessNotifications();
+
 mix.js("resources/js/app.js", "public/js")
     .vue()
+    .webpackConfig((webpack) => {
+        return {
+            plugins: [
+                new webpack.DefinePlugin({
+                    __VUE_OPTIONS_API__: true,
+                    __VUE_PROD_DEVTOOLS__: false,
+                }),
+            ],
+        };
+    })
     .postCss("resources/css/app.css", "public/css", [require("tailwindcss")]);

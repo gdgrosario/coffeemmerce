@@ -1,19 +1,12 @@
 import { createStore } from "vuex";
+import count from "./modules/count";
+import profile from "./modules/profile";
 
 const store = new createStore({
-    state: {
-        count: 0,
-    },
-    mutations: {
-        increment(state, payload) {
-            state.count += payload;
-        },
-    },
-    actions: {
-        increment({ commit }) {
-            commit("increment", 1);
-        },
-    },
+  modules: {
+    count,
+    profile,
+  },
 });
 
 export default store;

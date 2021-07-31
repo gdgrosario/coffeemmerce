@@ -1,21 +1,37 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
-    {
-        path: "/",
-        name: "Home",
-        component: () => import("../pages/Home.vue"),
-    },
-    {
-        path: "/about",
-        name: "About",
-        component: () => import("../pages/About.vue"),
-    },
+  {
+    path: "/",
+    name: "Home",
+    component: () =>
+      import(
+        /* webpackChunkName: "detail", webpackPreload: true */ "../pages/Home/Home.vue"
+      ),
+  },
+  {
+    path: "/profile",
+    name: "Profile",
+    component: () =>
+      import(
+        /* webpackChunkName: "detail", webpackPreload: true */ "../pages/Profile/views/Profile.vue"
+      ),
+  },
+  {
+    path: "/profile/edit",
+    name: "Edit",
+    props: true,
+    component: () =>
+      import(
+        /* webpackChunkName: "detail", webpackPreload: true */ "../pages/Profile/views/Edit.vue"
+      ),
+  },
 ];
 
 const router = new createRouter({
-    history: createWebHistory(process.env.BASE_URL),
-    routes,
+  scrollBehavior: () => ({ x: 0, y: 0 }),
+  history: createWebHistory(process.env.BASE_URL),
+  routes,
 });
 
 export default router;
