@@ -18,6 +18,9 @@
 .btn-white {
     @apply text-gray-900 bg-gray-50 hover:bg-gray-100;
 }
+.btn-red {
+    @apply text-gray-100 bg-red-500 hover:bg-red-400;
+}
 
 /* form-inputs */
 
