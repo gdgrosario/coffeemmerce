@@ -10567,7 +10567,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
-/* harmony import */ var _hooks_useForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../hooks/useForm */ "./resources/js/pages/Profile/hooks/useForm.js");
+/* harmony import */ var _hooks_useForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../hooks/useForm */ "./resources/js/hooks/useForm.js");
 /* harmony import */ var _InputsEditUser_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./InputsEditUser.vue */ "./resources/js/pages/Profile/components/form/InputsEditUser.vue");
 
 
@@ -10582,16 +10582,39 @@ __webpack_require__.r(__webpack_exports__);
       return (0,vuex__WEBPACK_IMPORTED_MODULE_3__.useStore)().state.profile.user;
     });
     var v$ = (0,_hooks_useForm__WEBPACK_IMPORTED_MODULE_1__.useForm)(userForm);
+    var image = "";
 
     var validateButton = function validateButton(v$) {
       if (v$.password.$invalid || v$.name.$invalid || v$.phone.$invalid || v$.email.$invalid) return true;
       return false;
     };
 
+    var imageUrl = function imageUrl(url) {
+      return image = url;
+    };
+
+    var onSubmit = function onSubmit(v$) {
+      if (v$.password.$invalid || v$.name.$invalid || v$.phone.$invalid || v$.email.$invalid) return;
+      var data = {
+        name: v$.name.$model,
+        bio: v$.bio.$model,
+        phone: v$.phone.$model,
+        email: v$.email.$model,
+        password: v$.password.$model
+      };
+      var formData = new FormData();
+      formData.append("image", image);
+      formData.append("data", data);
+      console.log(data);
+      console.log(image);
+    };
+
     return {
       v$: v$,
       userForm: userForm,
-      validateButton: validateButton
+      validateButton: validateButton,
+      onSubmit: onSubmit,
+      imageUrl: imageUrl
     };
   }
 });
@@ -10615,15 +10638,41 @@ __webpack_require__.r(__webpack_exports__);
     img: {
       type: String,
       "default": "https://via.placeholder.com/50x50"
-    }
+    },
+    urlImg: {}
   },
   setup: function setup(props) {
     var v$ = props.userForm;
-    var img = props.img;
     return {
-      v$: v$,
-      img: img
+      v$: v$
     };
+  },
+  data: function data() {
+    return {
+      image: this.$props.img
+    };
+  },
+  methods: {
+    selectImage: function selectImage() {
+      this.$refs.fileInput.click();
+    },
+    pickFile: function pickFile() {
+      var _this = this;
+
+      var input = this.$refs.fileInput;
+      var file = input.files;
+
+      if (file && file[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          _this.image = e.target.result;
+        };
+
+        reader.readAsDataURL(file[0]);
+        this.$props.urlImg(file[0]);
+      }
+    }
   }
 });
 
@@ -11001,24 +11050,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = {
-  "class": "space-y-3 w-full xs:px-2 md:px-10 py-5"
-};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_InputsEditUser = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("InputsEditUser");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("form", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_InputsEditUser, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("form", {
+    onSubmit: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+      return $setup.onSubmit($setup.v$);
+    }, ["prevent"])),
+    "class": "space-y-3 w-full xs:px-2 md:px-10 py-5"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_InputsEditUser, {
     userForm: $setup.v$,
-    img: $setup.userForm.img
+    img: $setup.userForm.img,
+    urlImg: $setup.imageUrl
   }, null, 8
   /* PROPS */
-  , ["userForm", "img"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+  , ["userForm", "img", "urlImg"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
     disabled: $setup.validateButton($setup.v$),
     "class": [$setup.validateButton($setup.v$) ? 'btn-red' : 'btn-black', "btn"],
     type: "submit"
   }, " Save Changes ", 10
   /* CLASS, PROPS */
-  , ["disabled"])]);
+  , ["disabled"])], 32
+  /* HYDRATE_EVENTS */
+  );
 }
 
 /***/ }),
@@ -11039,62 +11093,55 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "space-y-2 flex"
 };
-
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
-  "class": "text-gray-400"
-}, "CHANGE PHOTO", -1
-/* HOISTED */
-);
-
-var _hoisted_3 = {
+var _hoisted_2 = {
   "class": "space-y-2"
 };
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
   "for": "name",
   "class": "block font-medium tracking-tight"
 }, "Name", -1
 /* HOISTED */
 );
 
-var _hoisted_5 = {
+var _hoisted_4 = {
   "class": "space-y-2"
 };
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
   "for": "bio",
   "class": "block font-medium tracking-tight"
 }, "Bio", -1
 /* HOISTED */
 );
 
-var _hoisted_7 = {
+var _hoisted_6 = {
   "class": "space-y-2"
 };
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
   "for": "phone",
   "class": "block font-medium tracking-tight"
 }, "Phone", -1
 /* HOISTED */
 );
 
-var _hoisted_9 = {
+var _hoisted_8 = {
   "class": "space-y-2"
 };
 
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
   "for": "email",
   "class": "block font-medium tracking-tight"
 }, "Email", -1
 /* HOISTED */
 );
 
-var _hoisted_11 = {
+var _hoisted_10 = {
   "class": "space-y-2"
 };
 
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
   "for": "password",
   "class": "block font-medium tracking-tight"
 }, "Password", -1
@@ -11104,14 +11151,30 @@ var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
     "class": "rounded-sm mr-4",
-    src: $setup.img,
+    src: $data.image,
     width: "50",
     height: "50",
     alt: $setup.v$.name.$model
   }, null, 8
   /* PROPS */
-  , ["src", "alt"]), _hoisted_2]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
-    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+  , ["src", "alt"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    type: "button",
+    onClick: _cache[1] || (_cache[1] = function () {
+      return $options.selectImage && $options.selectImage.apply($options, arguments);
+    }),
+    "class": "text-gray-400"
+  }, " CHANGE PHOTO "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    ref: "fileInput",
+    hidden: "",
+    type: "file",
+    accept: "image/png, image/jpg, image/jpeg",
+    onChange: _cache[2] || (_cache[2] = function () {
+      return $options.pickFile && $options.pickFile.apply($options, arguments);
+    })
+  }, null, 544
+  /* HYDRATE_EVENTS, NEED_PATCH */
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
       return $setup.v$.name.$model = $event;
     }),
     id: "name",
@@ -11132,8 +11195,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     );
   }), 128
   /* KEYED_FRAGMENT */
-  ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("textarea", {
-    "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+  ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("textarea", {
+    "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
       return $setup.v$.bio.$model = $event;
     }),
     id: "bio",
@@ -11147,8 +11210,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* NEED_PATCH */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.v$.bio.$model, void 0, {
     trim: true
-  }]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
-    "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
+  }]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
       return $setup.v$.phone.$model = $event;
     }),
     id: "phone",
@@ -11169,8 +11232,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     );
   }), 128
   /* KEYED_FRAGMENT */
-  ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
-    "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
+  ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    "onUpdate:modelValue": _cache[6] || (_cache[6] = function ($event) {
       return $setup.v$.email.$model = $event;
     }),
     id: "email",
@@ -11191,8 +11254,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     );
   }), 128
   /* KEYED_FRAGMENT */
-  ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
-    "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
+  ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_10, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    "onUpdate:modelValue": _cache[7] || (_cache[7] = function ($event) {
       return $setup.v$.password.$model = $event;
     }),
     id: "password",
@@ -11302,10 +11365,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
-/***/ "./resources/js/pages/Profile/hooks/useForm.js":
-/*!*****************************************************!*\
-  !*** ./resources/js/pages/Profile/hooks/useForm.js ***!
-  \*****************************************************/
+/***/ "./resources/js/hooks/useForm.js":
+/*!***************************************!*\
+  !*** ./resources/js/hooks/useForm.js ***!
+  \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -11335,6 +11398,9 @@ function useForm(form) {
     password: {
       required: _vuelidate_validators__WEBPACK_IMPORTED_MODULE_1__.required,
       min: (0,_vuelidate_validators__WEBPACK_IMPORTED_MODULE_1__.minLength)(6)
+    },
+    confirmPassword: {
+      required: _vuelidate_validators__WEBPACK_IMPORTED_MODULE_1__.required
     }
   };
   var v$ = (0,_vuelidate_core__WEBPACK_IMPORTED_MODULE_0__.default)(rules, form);

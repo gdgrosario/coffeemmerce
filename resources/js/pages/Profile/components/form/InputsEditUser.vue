@@ -2,12 +2,21 @@
   <div class="space-y-2 flex">
     <img
       class="rounded-sm mr-4"
-      :src="img"
+      :src="image"
       width="50"
       height="50"
       :alt="v$.name.$model"
     />
-    <button class="text-gray-400">CHANGE PHOTO</button>
+    <button type="button" @click="selectImage" class="text-gray-400">
+      CHANGE PHOTO
+    </button>
+    <input
+      ref="fileInput"
+      hidden
+      type="file"
+      accept="image/png, image/jpg, image/jpeg"
+      @change="pickFile"
+    />
   </div>
   <div class="space-y-2">
     <label for="name" class="block font-medium tracking-tight">Name</label>
@@ -102,12 +111,33 @@ export default {
       type: String,
       default: "https://via.placeholder.com/50x50",
     },
+    urlImg: {},
   },
   setup(props) {
     const v$ = props.userForm;
-    const img = props.img;
-
-    return { v$, img };
+    return { v$ };
+  },
+  data() {
+    return {
+      image: this.$props.img,
+    };
+  },
+  methods: {
+    selectImage() {
+      this.$refs.fileInput.click();
+    },
+    pickFile() {
+      let input = this.$refs.fileInput;
+      let file = input.files;
+      if (file && file[0]) {
+        let reader = new FileReader();
+        reader.onload = (e) => {
+          this.image = e.target.result;
+        };
+        reader.readAsDataURL(file[0]);
+        this.$props.urlImg(file[0]);
+      }
+    },
   },
 };
 </script>
