@@ -18,6 +18,22 @@ const routes = [
       ),
   },
   {
+    path: "/car",
+    name: "Car",
+    component: () =>
+      import(
+        /* webpackChunkName: "detail", webpackPreload: true */ "../pages/Car/views/Car.vue"
+      ),
+  },
+  {
+    path: "/checkout",
+    name: "Checkout",
+    component: () =>
+      import(
+        /* webpackChunkName: "detail", webpackPreload: true */ "../pages/Checkout/views/Checkout.vue"
+      ),
+  },
+  {
     path: "/profile/edit",
     name: "Edit",
     props: true,
