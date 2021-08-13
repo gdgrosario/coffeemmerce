@@ -17,15 +17,7 @@ class UserController extends Controller
     {
         $users = User::all();
         return $users;
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
+        // return response()->json(["users"=>$users],200);
     }
 
     /**
@@ -39,7 +31,7 @@ class UserController extends Controller
         $input = $request->all();
         $input['password'] = Crypt::encrypt($input['password']);
         $user = User::create($input);
-        return $user;
+        return ['message' => 'User created', 'user' => $user];
     }
 
     /**
@@ -49,18 +41,6 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        $user = User::find($id);
-        return $user;
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
     {
         $user = User::find($id);
         return $user;
