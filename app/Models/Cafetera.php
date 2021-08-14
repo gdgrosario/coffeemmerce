@@ -16,4 +16,9 @@ class Cafetera extends Model
         'image_url',
         'type_id'
     ];
+
+    protected $hidden = [
+        'created_at',
+        'updated_at'
+    ];
 }

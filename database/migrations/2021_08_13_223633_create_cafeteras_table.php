@@ -15,11 +15,11 @@ class CreateCafeterasTable extends Migration
     {
         Schema::create('cafeteras', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('description');
-            $table->double('price');
-            $table->string('image_url');
-            $table->integer('type_id');
+            $table->string('name')->nullable(false);
+            $table->string('description')->nullable(false);
+            $table->double('price')->nullable(false);
+            $table->string('image_url')->nullable();
+            $table->integer('type_id')->nullable();
             $table->timestamps();
         });
     }
