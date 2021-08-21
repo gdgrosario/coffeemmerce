@@ -10,6 +10,14 @@ const routes = [
       ),
   },
   {
+    path: "/team",
+    name: "Team",
+    component: () =>
+      import(
+        /* webpackChunkName: "detail", webpackPreload: true */ "../layouts/Team.vue"
+      ),
+  },
+  {
     path: "/profile",
     name: "Profile",
     component: () =>

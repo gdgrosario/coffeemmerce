@@ -22355,6 +22355,12 @@ var routes = [{
     return __webpack_require__.e(/*! import() | detail */ "detail").then(__webpack_require__.bind(__webpack_require__, /*! ../pages/Home/Home.vue */ "./resources/js/pages/Home/Home.vue"));
   }
 }, {
+  path: "/team",
+  name: "Team",
+  component: function component() {
+    return __webpack_require__.e(/*! import() | detail */ "detail").then(__webpack_require__.bind(__webpack_require__, /*! ../layouts/Team.vue */ "./resources/js/layouts/Team.vue"));
+  }
+}, {
   path: "/profile",
   name: "Profile",
   component: function component() {
