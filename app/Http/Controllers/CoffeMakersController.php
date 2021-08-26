@@ -14,7 +14,8 @@ class CoffeMakersController extends Controller
      */
     public function index()
     {
-        //
+       $coffeMakers = CoffeMakers::all();
+       return $coffeMakers; 
     }
 
     /**
@@ -35,7 +36,9 @@ class CoffeMakersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $input = $request->all();
+      $coffeMaker = CoffeMakers::create($input);
+      return $coffeMaker;
     }
 
     /**
@@ -44,9 +47,10 @@ class CoffeMakersController extends Controller
      * @param  \App\Models\CoffeMakers  $coffeMakers
      * @return \Illuminate\Http\Response
      */
-    public function show(CoffeMakers $coffeMakers)
+    public function show($id)
     {
-        //
+      $coffeMaker = CoffeMakers::find($id);
+      return $coffeMaker; 
     }
 
     /**
@@ -55,9 +59,10 @@ class CoffeMakersController extends Controller
      * @param  \App\Models\CoffeMakers  $coffeMakers
      * @return \Illuminate\Http\Response
      */
-    public function edit(CoffeMakers $coffeMakers)
+    public function edit($id)
     {
-        //
+      $coffeMaker = CoffeMakers::find($id);
+      return $coffeMaker; 
     }
 
     /**
@@ -67,9 +72,13 @@ class CoffeMakersController extends Controller
      * @param  \App\Models\CoffeMakers  $coffeMakers
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CoffeMakers $coffeMakers)
+    public function update(Request $request, $id)
     {
-        //
+      $coffeMaker = CoffeMakers::findOrFail($id);
+
+      $input = $request->all();
+      $coffeMaker->update($input);
+      return ['message' => 'Coffe Maker updated', 'coffeMarker' => $coffeMaker]; 
     }
 
     /**
@@ -78,8 +87,9 @@ class CoffeMakersController extends Controller
      * @param  \App\Models\CoffeMakers  $coffeMakers
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CoffeMakers $coffeMakers)
+    public function destroy($id)
     {
-        //
+        CoffeMakers::destroy($id);
+        return 'Coffe Marker deleted';
     }
 }
