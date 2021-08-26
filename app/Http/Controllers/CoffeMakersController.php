@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\CoffeMakers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Crypt;
 
-class UserController extends Controller
+class CoffeMakersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return $users;
+        //
     }
 
     /**
@@ -26,8 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-      $user = User::create();
-      return $user;
+        //
     }
 
     /**
@@ -38,61 +35,51 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $input = $request->all();
-        $input['password'] = Crypt::encrypt($input['password']);
-        $user = User::create($input);
-        return $user;
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\CoffeMakers  $coffeMakers
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(CoffeMakers $coffeMakers)
     {
-        $user = User::find($id);
-        return $user;
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\CoffeMakers  $coffeMakers
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(CoffeMakers $coffeMakers)
     {
-        $user = User::find($id);
-        return $user;
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\CoffeMakers  $coffeMakers
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, CoffeMakers $coffeMakers)
     {
-        $user = User::findOrFail($id);
-
-        $input = $request->all();
-        $user->update($input);
-        return ['message' => 'User updated', 'user' => $user];
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\CoffeMakers  $coffeMakers
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(CoffeMakers $coffeMakers)
     {
-        User::destroy($id);
-        return 'User deleted.';
+        //
     }
 }
