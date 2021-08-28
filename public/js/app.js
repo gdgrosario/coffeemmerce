@@ -22352,38 +22352,38 @@ var routes = [{
   path: "/",
   name: "Home",
   component: function component() {
-    return __webpack_require__.e(/*! import() | detail */ "detail").then(__webpack_require__.bind(__webpack_require__, /*! ../pages/Home/Home.vue */ "./resources/js/pages/Home/Home.vue"));
+    return __webpack_require__.e(/*! import() | home */ "home").then(__webpack_require__.bind(__webpack_require__, /*! ../pages/Home/Home.vue */ "./resources/js/pages/Home/Home.vue"));
   }
 }, {
   path: "/team",
   name: "Team",
   component: function component() {
-    return __webpack_require__.e(/*! import() | detail */ "detail").then(__webpack_require__.bind(__webpack_require__, /*! ../layouts/Team.vue */ "./resources/js/layouts/Team.vue"));
+    return __webpack_require__.e(/*! import() | team */ "team").then(__webpack_require__.bind(__webpack_require__, /*! ../layouts/Team.vue */ "./resources/js/layouts/Team.vue"));
   }
 }, {
   path: "/profile",
   name: "Profile",
   component: function component() {
-    return __webpack_require__.e(/*! import() | detail */ "detail").then(__webpack_require__.bind(__webpack_require__, /*! ../pages/Profile/views/Profile.vue */ "./resources/js/pages/Profile/views/Profile.vue"));
+    return __webpack_require__.e(/*! import() | profile */ "profile").then(__webpack_require__.bind(__webpack_require__, /*! ../pages/Profile/views/Profile.vue */ "./resources/js/pages/Profile/views/Profile.vue"));
   }
 }, {
   path: "/car",
   name: "Car",
   component: function component() {
-    return __webpack_require__.e(/*! import() | detail */ "detail").then(__webpack_require__.bind(__webpack_require__, /*! ../pages/Car/views/Car.vue */ "./resources/js/pages/Car/views/Car.vue"));
+    return __webpack_require__.e(/*! import() | car */ "car").then(__webpack_require__.bind(__webpack_require__, /*! ../pages/Car/views/Car.vue */ "./resources/js/pages/Car/views/Car.vue"));
   }
 }, {
   path: "/checkout",
   name: "Checkout",
   component: function component() {
-    return __webpack_require__.e(/*! import() | detail */ "detail").then(__webpack_require__.bind(__webpack_require__, /*! ../pages/Checkout/views/Checkout.vue */ "./resources/js/pages/Checkout/views/Checkout.vue"));
+    return __webpack_require__.e(/*! import() | checkout */ "checkout").then(__webpack_require__.bind(__webpack_require__, /*! ../pages/Checkout/views/Checkout.vue */ "./resources/js/pages/Checkout/views/Checkout.vue"));
   }
 }, {
   path: "/profile/edit",
   name: "Edit",
   props: true,
   component: function component() {
-    return __webpack_require__.e(/*! import() | detail */ "detail").then(__webpack_require__.bind(__webpack_require__, /*! ../pages/Profile/views/Edit.vue */ "./resources/js/pages/Profile/views/Edit.vue"));
+    return __webpack_require__.e(/*! import() | profile_edit */ "profile_edit").then(__webpack_require__.bind(__webpack_require__, /*! ../pages/Profile/views/Edit.vue */ "./resources/js/pages/Profile/views/Edit.vue"));
   }
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__.createRouter({
@@ -22525,7 +22525,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nhtml {\r\n  font-family: \"Poppins\", sans-serif;\n}\nbody {\r\n  background-color: #f5f5f5;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nhtml {\n  font-family: \"Poppins\", sans-serif;\n}\nbody {\n  background-color: #f5f5f5;\n}\nhtml::-webkit-scrollbar {\n  width: 8px;\n}\nhtml::-webkit-scrollbar-thumb {\n  background: #ccc;\n  border-radius: 4px;\n}\nhtml::-webkit-scrollbar-thumb:active {\n  background-color: #999999;\n}\nhtml::-webkit-scrollbar-thumb:hover {\n  background: #b3b3b3;\n  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);\n}\nhtml::-webkit-scrollbar-track {\n  background: #e1e1e1;\n  border-radius: 4px;\n}\nhtml::-webkit-scrollbar-track:hover,\nhtml::-webkit-scrollbar-track:active {\n  background: #d4d4d4;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28780,7 +28780,10 @@ var index = {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if (chunkId === "detail") return "js/" + chunkId + ".js";
+/******/ 			if (chunkId === "home") return "js/home.js";
+/******/ 			if (chunkId === "team") return "js/team.js";
+/******/ 			if ({"profile":1,"checkout":1,"profile_edit":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if (chunkId === "car") return "js/car.js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

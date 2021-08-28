@@ -1,5 +1,10 @@
 {
     "/js/app.js": "/js/app.js",
-    "/js/detail.js": "/js/detail.js",
+    "/js/home.js": "/js/home.js",
+    "/js/team.js": "/js/team.js",
+    "/js/profile.js": "/js/profile.js",
+    "/js/car.js": "/js/car.js",
+    "/js/checkout.js": "/js/checkout.js",
+    "/js/profile_edit.js": "/js/profile_edit.js",
     "/css/app.css": "/css/app.css"
 }
