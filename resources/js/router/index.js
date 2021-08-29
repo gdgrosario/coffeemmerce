@@ -50,6 +50,24 @@ const routes = [
         /* webpackChunkName: "profile_edit", webpackPreload: true */ "../pages/Profile/views/Edit.vue"
       ),
   },
+  {
+    path: "/login",
+    name: "Login",
+    props: true,
+    component: () =>
+      import(
+        /* webpackChunkName: "login", webpackPreload: true */ "../pages/Auth/views/Login.vue"
+      ),
+  },
+  {
+    path: "/sign-up",
+    name: "Sign up",
+    props: true,
+    component: () =>
+      import(
+        /* webpackChunkName: "sign_up", webpackPreload: true */ "../pages/Auth/views/SignUp.vue"
+      ),
+  },
 ];
 
 const router = new createRouter({

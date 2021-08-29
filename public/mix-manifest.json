@@ -6,5 +6,7 @@
     "/js/car.js": "/js/car.js",
     "/js/checkout.js": "/js/checkout.js",
     "/js/profile_edit.js": "/js/profile_edit.js",
+    "/js/login.js": "/js/login.js",
+    "/js/sign_up.js": "/js/sign_up.js",
     "/css/app.css": "/css/app.css"
 }

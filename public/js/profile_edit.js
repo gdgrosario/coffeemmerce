@@ -10997,6 +10997,9 @@ function useForm(form) {
     },
     confirmPassword: {
       required: _vuelidate_validators__WEBPACK_IMPORTED_MODULE_1__.required
+    },
+    check: {
+      required: _vuelidate_validators__WEBPACK_IMPORTED_MODULE_1__.required
     }
   };
   var v$ = (0,_vuelidate_core__WEBPACK_IMPORTED_MODULE_0__.default)(rules, form);
