@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class CafeteraController extends Controller
 {
+    // public function __construct()
+    // {
+    //     $this->middleware('auth:api');
+    // }
+
     public function index()
     {
         $cafeteras = Cafetera::all();
