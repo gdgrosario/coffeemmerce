@@ -6,7 +6,7 @@ const routes = [
     name: "Home",
     component: () =>
       import(
-        /* webpackChunkName: "detail", webpackPreload: true */ "../pages/Home/Home.vue"
+        /* webpackChunkName: "home", webpackPreload: true */ "../pages/Home/Home.vue"
       ),
   },
   {
@@ -14,7 +14,7 @@ const routes = [
     name: "Team",
     component: () =>
       import(
-        /* webpackChunkName: "detail", webpackPreload: true */ "../layouts/Team.vue"
+        /* webpackChunkName: "team", webpackPreload: true */ "../layouts/Team.vue"
       ),
   },
   {
@@ -22,7 +22,7 @@ const routes = [
     name: "Profile",
     component: () =>
       import(
-        /* webpackChunkName: "detail", webpackPreload: true */ "../pages/Profile/views/Profile.vue"
+        /* webpackChunkName: "profile", webpackPreload: true */ "../pages/Profile/views/Profile.vue"
       ),
   },
   {
@@ -30,7 +30,7 @@ const routes = [
     name: "Car",
     component: () =>
       import(
-        /* webpackChunkName: "detail", webpackPreload: true */ "../pages/Car/views/Car.vue"
+        /* webpackChunkName: "car", webpackPreload: true */ "../pages/Car/views/Car.vue"
       ),
   },
   {
@@ -38,7 +38,7 @@ const routes = [
     name: "Checkout",
     component: () =>
       import(
-        /* webpackChunkName: "detail", webpackPreload: true */ "../pages/Checkout/views/Checkout.vue"
+        /* webpackChunkName: "checkout", webpackPreload: true */ "../pages/Checkout/views/Checkout.vue"
       ),
   },
   {
@@ -47,7 +47,25 @@ const routes = [
     props: true,
     component: () =>
       import(
-        /* webpackChunkName: "detail", webpackPreload: true */ "../pages/Profile/views/Edit.vue"
+        /* webpackChunkName: "profile_edit", webpackPreload: true */ "../pages/Profile/views/Edit.vue"
+      ),
+  },
+  {
+    path: "/login",
+    name: "Login",
+    props: true,
+    component: () =>
+      import(
+        /* webpackChunkName: "login", webpackPreload: true */ "../pages/Auth/views/Login.vue"
+      ),
+  },
+  {
+    path: "/sign-up",
+    name: "Sign up",
+    props: true,
+    component: () =>
+      import(
+        /* webpackChunkName: "sign_up", webpackPreload: true */ "../pages/Auth/views/SignUp.vue"
       ),
   },
 ];

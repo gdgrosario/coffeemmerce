@@ -8,7 +8,7 @@
 
 /* btn */
 .btn {
-    @apply rounded-sm inline-flex items-center px-5 py-2 overflow-hidden focus:outline-none font-medium tracking-tight;
+    @apply rounded-lg inline-flex items-center px-5 py-2 overflow-hidden focus:outline-none font-medium tracking-tight;
 }
 
 .btn-black {
@@ -22,8 +22,16 @@
     @apply text-gray-100 bg-red-500 hover:bg-red-400;
 }
 
+.btn-blue {
+    @apply bg-blue-500 hover:bg-blue-400 text-gray-50;
+}
+
 /* form-inputs */
 
 .input-group {
     @apply w-full border border-gray-400 text-gray-700 placeholder-gray-400 rounded focus:border-transparent focus:outline-none  px-3 py-2;
+}
+
+.input {
+    @apply text-sm text-gray-600 block rounded-md px-2 py-2 my-2 bg-gray-100 w-full outline-none;
 }

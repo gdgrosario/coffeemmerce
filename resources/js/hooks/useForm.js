@@ -29,6 +29,9 @@ export function useForm(form) {
     confirmPassword: {
       required,
     },
+    check: {
+      required,
+    },
   };
 
   const v$ = useVuelidate(rules, form);
