@@ -22357,6 +22357,18 @@ var routes = [{
     return __webpack_require__.e(/*! import() | home */ "home").then(__webpack_require__.bind(__webpack_require__, /*! ../pages/Home/Home.vue */ "./resources/js/pages/Home/Home.vue"));
   }
 }, {
+  path: "/:pathMatch(.*)*",
+  name: "Error",
+  component: function component() {
+    return __webpack_require__.e(/*! import() | error */ "error").then(__webpack_require__.bind(__webpack_require__, /*! ../pages/Error/Error.vue */ "./resources/js/pages/Error/Error.vue"));
+  }
+}, {
+  path: "/:pathMatch(.*)",
+  name: "Error",
+  component: function component() {
+    return __webpack_require__.e(/*! import() | error */ "error").then(__webpack_require__.bind(__webpack_require__, /*! ../pages/Error/Error.vue */ "./resources/js/pages/Error/Error.vue"));
+  }
+}, {
   path: "/team",
   name: "Team",
   component: function component() {
@@ -28897,8 +28909,8 @@ var index = {
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
 /******/ 			if (chunkId === "home") return "js/home.js";
+/******/ 			if ({"error":1,"profile":1,"checkout":1,"profile_edit":1,"login":1,"sign_up":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			if (chunkId === "team") return "js/team.js";
-/******/ 			if ({"profile":1,"checkout":1,"profile_edit":1,"login":1,"sign_up":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			if (chunkId === "car") return "js/car.js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;

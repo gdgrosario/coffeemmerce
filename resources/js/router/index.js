@@ -10,6 +10,22 @@ const routes = [
       ),
   },
   {
+    path: "/:pathMatch(.*)*",
+    name: "Error",
+    component: () =>
+      import(
+        /* webpackChunkName: "error", webpackPreload: true */ "../pages/Error/Error.vue"
+      ),
+  },
+  {
+    path: "/:pathMatch(.*)",
+    name: "Error",
+    component: () =>
+      import(
+        /* webpackChunkName: "error", webpackPreload: true */ "../pages/Error/Error.vue"
+      ),
+  },
+  {
     path: "/team",
     name: "Team",
     component: () =>
