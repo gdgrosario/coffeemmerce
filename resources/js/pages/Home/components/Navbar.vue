@@ -1,6 +1,6 @@
 <template>
-<div class="container mx-auto px-20">
-<h2 class="text-center font-bold mt-16 text-3xl text-yellow-600	">Coffemmerce</h2>
+<div>
+<h2 class="text-center font-bold mt-8 text-3xl text-yellow-600	">Coffemmerce</h2>
 <div class="flex mt-5 mb-5">
   <div class="flex-1  text-center">
       <span>Home</span>

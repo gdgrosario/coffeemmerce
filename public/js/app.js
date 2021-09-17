@@ -22373,6 +22373,12 @@ var routes = [{
     return __webpack_require__.e(/*! import() | detail */ "detail").then(__webpack_require__.bind(__webpack_require__, /*! ../pages/Checkout/views/Checkout.vue */ "./resources/js/pages/Checkout/views/Checkout.vue"));
   }
 }, {
+  path: "/productView/id",
+  name: "productView",
+  component: function component() {
+    return __webpack_require__.e(/*! import() | detail */ "detail").then(__webpack_require__.bind(__webpack_require__, /*! ../pages/ProductView/views/ProductView.vue */ "./resources/js/pages/ProductView/views/ProductView.vue"));
+  }
+}, {
   path: "/profile/edit",
   name: "Edit",
   props: true,

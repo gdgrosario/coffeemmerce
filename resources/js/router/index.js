@@ -34,6 +34,14 @@ const routes = [
       ),
   },
   {
+    path: "/productView/id",
+    name: "productView",
+    component: () =>
+      import(
+        /* webpackChunkName: "detail", webpackPreload: true */ "../pages/ProductView/views/ProductView.vue"
+      ),
+  },
+  {
     path: "/profile/edit",
     name: "Edit",
     props: true,

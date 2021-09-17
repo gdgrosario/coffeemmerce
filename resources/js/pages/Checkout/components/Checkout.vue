@@ -1,6 +1,7 @@
 <template>
 
 <div class="container mx-auto lg:text-left text-center lg:px-40">
+<div class=" mx-auto lg:text-left text-center lg:px-40">
 <div class="mt-8">
     <h2 class="font-bold text-xl">Detalles de compra</h2>
     </div>
@@ -16,6 +17,7 @@
 </button>
 
         </div>        
+         </div>
          </div>
 
 </template>
