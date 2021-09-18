@@ -42,6 +42,22 @@ const routes = [
       ),
   },
   {
+    path: "/car",
+    name: "Car",
+    component: () =>
+      import(
+        /* webpackChunkName: "detail", webpackPreload: true */ "../pages/Car/views/Car.vue"
+      ),
+  },
+  {
+    path: "/checkout",
+    name: "Checkout",
+    component: () =>
+      import(
+        /* webpackChunkName: "detail", webpackPreload: true */ "../pages/Checkout/views/Checkout.vue"
+      ),
+  },
+  {
     path: "/profile/edit",
     name: "Edit",
     props: true,
@@ -57,6 +73,15 @@ const routes = [
     component: () =>
       import(
         /* webpackChunkName: "login", webpackPreload: true */ "../pages/Auth/views/Login.vue"
+      ),
+  },
+  {
+    path: "/product/id",
+    name: "ProductView",
+    props: true,
+    component: () =>
+      import(
+        /* webpackChunkName: "ProductView", webpackPreload: true */ "../pages/ProductView/views/ProductView.vue"
       ),
   },
   {

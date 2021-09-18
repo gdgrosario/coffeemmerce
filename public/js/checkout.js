@@ -56,7 +56,7 @@ var _hoisted_1 = {
   "class": "container mx-auto lg:text-left text-center lg:px-40"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"mt-8\"><h2 class=\"font-bold text-xl\">Detalles de compra</h2></div><div><input type=\"text\" class=\"form-input  mt-6 lg:w-96 border-transparent\" placeholder=\"Nombre\"><input type=\"text\" class=\"form-input  mt-6 lg:ml-8 w-45 lg:w-96 border-transparent\" placeholder=\"Apellido\"><input type=\"text\" class=\"form-input  mt-6 w-45  lg:w-96 border-transparent\" placeholder=\"Ciudad\"><input type=\"text\" class=\"form-input  mt-6 w-45 lg:ml-8 lg:w-96 border-transparent\" placeholder=\"Dirección\"><input type=\"text\" class=\"form-input  mt-6 w-45 lg:w-96 border-transparent\" placeholder=\"Teléfono\"><button class=\"bg-yellow-800 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded block mt-7 mb-8 w-52 duration-300 ease-in-out mt-5 mx-auto lg:mx-0\"> Procesar pago </button></div>", 2);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\" mx-auto lg:text-left text-center lg:px-40\"><div class=\"mt-8\"><h2 class=\"font-bold text-xl\">Detalles de compra</h2></div><div><input type=\"text\" class=\"form-input  mt-6 lg:w-96 border-transparent\" placeholder=\"Nombre\"><input type=\"text\" class=\"form-input  mt-6 lg:ml-8 w-45 lg:w-96 border-transparent\" placeholder=\"Apellido\"><input type=\"text\" class=\"form-input  mt-6 w-45  lg:w-96 border-transparent\" placeholder=\"Ciudad\"><input type=\"text\" class=\"form-input  mt-6 w-45 lg:ml-8 lg:w-96 border-transparent\" placeholder=\"Dirección\"><input type=\"text\" class=\"form-input  mt-6 w-45 lg:w-96 border-transparent\" placeholder=\"Teléfono\"><button class=\"bg-yellow-800 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded block mt-7 mb-8 w-52 duration-300 ease-in-out mt-5 mx-auto lg:mx-0\"> Procesar pago </button></div></div>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [_hoisted_2]);
@@ -102,7 +102,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nbody{\n    background: #F2DBD2;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nbody{\r\n    background: #F2DBD2;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

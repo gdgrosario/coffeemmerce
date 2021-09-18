@@ -559,7 +559,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.dropdown:hover .dropdown-menu {\n  display: block;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.dropdown:hover .dropdown-menu {\r\n  display: block;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -583,7 +583,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nbody{\n      background: #F2DBD2;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nbody{\r\n      background: #F2DBD2;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -607,7 +607,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.splide.splide--slide.splide--ltr.splide--draggable.is-active{\nbackground:linear-gradient( #EE9E24, #724500);\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.splide.splide--slide.splide--ltr.splide--draggable.is-active{\r\nbackground:linear-gradient( #EE9E24, #724500);\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
