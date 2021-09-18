@@ -1,12 +1,14 @@
 {
     "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
     "/js/home.js": "/js/home.js",
     "/js/team.js": "/js/team.js",
     "/js/profile.js": "/js/profile.js",
     "/js/car.js": "/js/car.js",
     "/js/checkout.js": "/js/checkout.js",
+    "/js/detail.js": "/js/detail.js",
     "/js/profile_edit.js": "/js/profile_edit.js",
     "/js/login.js": "/js/login.js",
     "/js/sign_up.js": "/js/sign_up.js",
-    "/css/app.css": "/css/app.css"
+    "/js/ProductView.js": "/js/ProductView.js"
 }

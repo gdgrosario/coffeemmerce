@@ -2590,7 +2590,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "\n      animate__animated animate__backInUp\n      xm:container xm:my-10\n      md:mt-0 md:w-3/5\n      mx-auto\n    "
+  "class": "\r\n      animate__animated animate__backInUp\r\n      xm:container xm:my-10\r\n      md:mt-0 md:w-3/5\r\n      mx-auto\r\n    "
 };
 var _hoisted_2 = {
   "class": "text-3xl mb-2 font-bold text-gray-900"
@@ -2859,7 +2859,7 @@ var _hoisted_1 = {
   "class": "h-screen md:flex"
 };
 var _hoisted_2 = {
-  "class": "\n        xm:w-full\n        md:w-3/5 md:h-full\n        flex flex-col\n        justify-between\n        items-center\n      "
+  "class": "\r\n        xm:w-full\r\n        md:w-3/5 md:h-full\r\n        flex flex-col\r\n        justify-between\r\n        items-center\r\n      "
 };
 var _hoisted_3 = {
   "class": "xm:text-center md:text-right pt-5 pr-5"
@@ -2986,7 +2986,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\ninput:hover {\n  box-shadow: 0 0 0 4px rgba(219, 230, 255, 1);\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\ninput:hover {\r\n  box-shadow: 0 0 0 4px rgba(219, 230, 255, 1);\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

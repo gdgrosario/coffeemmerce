@@ -49,7 +49,7 @@ var _hoisted_2 = {
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "flex flex-col text-center w-full mb-10"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h1", {
-  "class": "\n            text-2xl\n            font-medium\n            title-font\n            mb-4\n            text-gray-900\n            tracking-widest\n          "
+  "class": "\r\n            text-2xl\r\n            font-medium\r\n            title-font\r\n            mb-4\r\n            text-gray-900\r\n            tracking-widest\r\n          "
 }, " TEAM - COFFEEMMERCE "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", {
   "class": "lg:w-2/3 mx-auto leading-relaxed text-base"
 }, " Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them. ")], -1
@@ -60,7 +60,7 @@ var _hoisted_4 = {
   "class": "flex flex-wrap -m-4"
 };
 var _hoisted_5 = {
-  "class": "\n              h-full\n              flex\n              sm:flex-row\n              flex-col\n              items-center\n              sm:justify-start\n              justify-center\n              text-center\n              sm:text-left\n            "
+  "class": "\r\n              h-full\r\n              flex\r\n              sm:flex-row\r\n              flex-col\r\n              items-center\r\n              sm:justify-start\r\n              justify-center\r\n              text-center\r\n              sm:text-left\r\n            "
 };
 var _hoisted_6 = {
   "class": "flex-grow sm:pl-8"
@@ -81,7 +81,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       "class": "p-4 lg:w-1/2"
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
       alt: "team",
-      "class": "\n                flex-shrink-0\n                rounded-lg\n                w-48\n                h-48\n                object-cover object-center\n                sm:mb-0\n                mb-4\n              ",
+      "class": "\r\n                flex-shrink-0\r\n                rounded-lg\r\n                w-48\r\n                h-48\r\n                object-cover object-center\r\n                sm:mb-0\r\n                mb-4\r\n              ",
       src: person.avatar
     }, null, 8
     /* PROPS */
